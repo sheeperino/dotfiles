@@ -1,0 +1,76 @@
+/*================ IMPORT USERCHROME.CSS ================*/
+@import "userChrome.css";
+
+@media (prefers-color-scheme: dark) {
+:root {
+	--page_bg_color: var(--night_color1);
+	--search_bg_color: var(--night_color2);
+	--search_border_color: var(--night_color3);
+	--search_border_active_color: var(--night_color4);
+	--search_txt_color: var(--frost_color3);
+}
+}
+
+@media (prefers-color-scheme: light) {
+:root {
+	--page_bg_color: var(--snow_color1);
+	--search_bg_color: var(--snow_color2);
+	--search_border_color: var(--snow_color3);
+	--search_border_active_color: var(--snow_color3);
+	--search_txt_color: var(--night_color4);
+}
+}
+
+/*================== NEW TAB BG COLOR ==================*/
+@-moz-document url("about:newtab"), url("about:home"), url("about:blank") {
+ body { background-color: var(--page_bg_color) !important;}
+}
+
+/*================== SEARCH BAR ==================*/
+.search-wrapper input {
+	transition: all 0.3s ease !important;
+    background: var(--search_bg_color) var(--newtab-search-icon) 12px center no-repeat !important;
+	background-size: 20px !important;
+	border: 1px solid !important;
+	border-color: var(--search_border_color) !important;
+	box-shadow: none !important;
+	color: var(--search_txt_color) !important;
+}
+.search-wrapper .search-inner-wrapper:hover input,
+.search-wrapper .search-inner-wrapper:active input,
+.search-wrapper input:focus {
+	border-color: var(--search_border_active_color) !important;
+}
+
+.search-wrapper .search-button,
+.search-wrapper .search-button {
+	transition: all 0.3s ease !important;
+	fill: var(--search_txt_color) !important;
+}
+.search-wrapper .search-button:focus,
+.search-wrapper .search-button:hover {
+    background-color: var(--search_border_active_color) !important;
+}
+
+/*================== SEARCH BAR RESULTS ==================*/
+.contentSearchSuggestionTable .contentSearchSuggestionsContainer,
+.contentSearchSuggestionTable .contentSearchHeader {
+    background-color: var(--search_bg_color) !important;
+	color: var(--search_txt_color) !important;
+}
+.contentSearchSuggestionTable .contentSearchSuggestionRow.selected,
+.contentSearchSuggestionTable .contentSearchOneOffItem.selected {
+	background-color: var(--search_border_color) !important;
+}
+
+.contentSearchSuggestionTable .contentSearchHeader,
+.contentSearchSuggestionTable .contentSearchSettingsButton,
+.contentSearchSuggestionTable .contentSearchOneOffsTable {
+	border-color: var(--search_border_color) !important;
+}
+
+.contentSearchSuggestionTable {
+	box-shadow: none !important;
+	border: 1px solid var(--search_border_color) !important;
+	border-radius: 3px !important;
+}
