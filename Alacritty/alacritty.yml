@@ -87,6 +87,7 @@ window:
     x: 8
     y: 8
   opacity: 1
+  dynamic_title: false
 
 font:
   normal:
