@@ -8,8 +8,8 @@ Bar_OffsetY =4
 Section_Height =33
 
 Color_Scheme1 =282A3600 ; 00
-Color_Scheme2 =E9E9F4
-Color_Scheme3 =D156C0
+Color_Scheme2 =CDD6F4
+Color_Scheme3 =CBA6F7
 Color_Scheme4 =F04747
 Font_Face1=Fira Code
 Font_Face2=Fira Code
