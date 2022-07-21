@@ -1,16 +1,23 @@
 ﻿#SingleInstance, force
-#WinActivateForce
+; #WinActivateForce
+DetectHiddenWindows, On
 SetBatchLines, -1
+SetTitleMatchMode, 2
 SendMode, Input
 Process, Priority, , A
 SetKeyDelay, 0
 
-CheckRun(path :="", processName :="", arguments :="") {
-    SplitPath, path,,,, nameNoExt
-    Process := (processName) ? (processName) : (nameNoExt . ".exe") ; if a value has been assigned to processName
-    process, exist, %Process%
+CheckRun(path :="", processName :="", processType :="", arguments :="") {
+    ; path: used to run the application
+    ; processName: used to check if the process exists
+    ; processType: used to specify the type of process [ahk_exe, ahk_class, (Title)]
+    ; arguments: used to add arguments to run along with the application
+
+    process, exist, %procesName%
     if (ErrorLevel) { 
-            WinActivate, ahk_exe %Process% ; .exe
+            WinSet, AlwaysOnTop, On, %processType%
+            WinSet, AlwaysOnTop, Off, %processType%
+            WinActivate, %processType%
     }
     else {
         if (arguments) {
@@ -22,6 +29,7 @@ CheckRun(path :="", processName :="", arguments :="") {
     }
 }
 
+; kinda unused
 Capitalization(mode) {
     Clipboard := ""
     Sleep 50
@@ -36,17 +44,16 @@ Capitalization(mode) {
     ; Send % "{Text}" word ; "{Raw}" word  
 }
 
-; run programs, add a second argument if the process name is different than the file name
 #SC030:: ; SC030 is b
-    CheckRun("C:\Program Files\Mozilla Firefox\firefox.exe")
+    CheckRun("C:\Program Files\Mozilla Firefox\firefox.exe", "firefox.exe", "ahk_exe firefox.exe")
 return
 
 ^>!#SC02E:: ; SC02E is c
-    CheckRun("C:\Users\Sophie\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk")
+    CheckRun("C:\Users\Sophie\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk", "discord.exe", "Discord")
 return
 
 #SC021:: ; SC021 is t
-    CheckRun("C:\Program Files\Alacritty\alacritty.exe")
+    CheckRun("C:\Program Files\Alacritty\alacritty.exe", "alacritty.exe", "Alacritty")
 return
 
 ^>!#SC02F:: ; SC02F is v
@@ -54,7 +61,7 @@ return
 return
 
 #SC024::
-    CheckRun("C:\ProgramData\chocolatey\bin\neovide.exe", "neovide.exe", "--multigrid")
+    CheckRun("C:\ProgramData\chocolatey\bin\neovide.exe", "neovide.exe", "Neovide", "--multigrid")
 return
 
 
@@ -72,16 +79,6 @@ return
 ^+PgUp::
     Capitalization("title")
 return
-
-; $LWin up::
-; If (A_PriorKey = "LWin") ; LWin was pressed alone
-;     Send, #{Tab}
-; return
-
-; In this case its necessary to define a custom combination by using "&" or "<#" 
-; to avoid that LWin loses its original function as a modifier key:
-
-; <#d:: Send #d  ; <# means LWin
 
 
 LWin & AppsKey::Return
