@@ -16,7 +16,7 @@
         "darkSchemeTextColor": "#cdd6f4",
         "lightSchemeBackgroundColor": "#dcdad7",
         "lightSchemeTextColor": "#181a1b",
-        "scrollbarColor": "#626483",
+        "scrollbarColor": "#1e1e2e",
         "selectionColor": "auto",
         "styleSystemControls": true,
         "lightColorScheme": "Default",
@@ -46,7 +46,6 @@
         "file:",
         "fanficmaker.com",
         "www.google.com",
-        "www.youtube.com",
         "namemc.com",
         "accounts.pixiv.net",
         "sheeperino.carrd.co",
@@ -59,14 +58,15 @@
         "www.keybr.com",
         "garticphone.com",
         "skribbl.io",
-        "www.reddit.com"
+        "www.reddit.com",
+        "www.youtube.com"
     ],
     "siteListEnabled": [
         "betterdiscord.app",
         "www.netflix.com"
     ],
     "applyToListedOnly": false,
-    "changeBrowserTheme": true,
+    "changeBrowserTheme": false,
     "syncSettings": true,
     "syncSitesFixes": false,
     "automation": "",
@@ -84,6 +84,7 @@
     "enableForProtectedPages": false,
     "enableContextMenus": false,
     "detectDarkTheme": false,
+    "notifyOfNews": false,
     "readNews": [
         "v4-9-16",
         "v4-9",
@@ -102,7 +103,6 @@
         "dynamic-theme",
         "5m-users"
     ],
-    "notifyOfNews": false,
     "displayedNews": [
         "mobile"
     ]
