@@ -1,6 +1,4 @@
 ﻿#SingleInstance, force
-; #WinActivateForce
-DetectHiddenWindows, On
 SetBatchLines, -1
 SetTitleMatchMode, 2
 SendMode, Input
@@ -13,20 +11,17 @@ CheckRun(path :="", processName :="", processType :="", arguments :="") {
     ; processType: used to specify the type of process [ahk_exe, ahk_class, (Title)]
     ; arguments: used to add arguments to run along with the application
 
-    process, exist, %procesName%
-    if (ErrorLevel) { 
-            WinSet, AlwaysOnTop, On, %processType%
-            WinSet, AlwaysOnTop, Off, %processType%
-            WinActivate, %processType%
-    }
-    else {
+    Process, exist, %processName%
+    if (!ErrorLevel) {
         if (arguments) {
             Run, %path% %arguments%
         }
         else {
             Run, % path
         }
+        WinWait, %processType% ; Wait for window to open
     }
+    WinActivate, %processType%
 }
 
 ; kinda unused
@@ -45,7 +40,7 @@ Capitalization(mode) {
 }
 
 #SC030:: ; SC030 is b
-    CheckRun("C:\Program Files\Mozilla Firefox\firefox.exe", "firefox.exe", "ahk_exe firefox.exe")
+    CheckRun("C:\Program Files\Mozilla Firefox\firefox.exe", "firefox.exe", "Mozilla Firefox")
 return
 
 ^>!#SC02E:: ; SC02E is c
