@@ -1,0 +1,23 @@
+{
+    "version": "1.5.3",
+    "emoteVersion": "v1.2.0",
+    "drawerStates": {
+        "settings": {
+            "window": true,
+            "developer": true,
+            "customcss": true,
+            "addons": true,
+            "appearance": true
+        }
+    },
+    "addonlistControls": {
+        "theme": {
+            "view": "grid"
+        },
+        "plugin": {
+            "view": "grid",
+            "sort": "added",
+            "ascending": false
+        }
+    }
+}

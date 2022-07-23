@@ -1,0 +1,24 @@
+
+*
+{
+    font-family: "Fira Sans" !important;
+    /* font-family: "Fira Code", monospace;  */
+} 
+
+.winButtonMinMax-3RsPUg-,/* boutton fermer */
+.winButtonMinMax-PBQ2gm,/* boutton minimiser */
+.winButton-3UMjdg,/* boutton agrandir */
+.wordmarkWindows-2dq6rw
+{
+    top: 0px;
+    left: 0px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 0px;
+    margin-right: 7px;
+    background-color: #FFFFFF;
+    transition: 0.3s;
+    opacity:0;
+}
+
