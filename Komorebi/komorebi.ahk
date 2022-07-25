@@ -3,13 +3,10 @@ SetTitleMatchMode, 2
 SetKeyDelay, -1
 
 
-; Enable hot reloading of changes to this file
+; Disable hot reloading of changes to this file
 Run, komorebic.exe watch-configuration disable, , Hide
 
-; Configure the invisible border dimensions
-Run, komorebic.exe invisible-borders 15 15 15 15, , Hide
-
-; Enable focus follows mouse
+; Disable focus follows mouse
 Run, komorebic.exe focus-follows-mouse disable, , Hide
 
 ; Ensure there are 3 workspaces created on monitor 0
@@ -23,10 +20,13 @@ Run, komorebic.exe workspace-name 0 3 matrix, , Hide
 Run, komorebic.exe workspace-name 0 4 floaty, , Hide
 
 ; Set the padding of the different workspaces
-Run, komorebic.exe workspace-padding 0 1 30, , Hide
+Run, komorebic.exe workspace-padding 0 0 0, , Hide
+Run, komorebic.exe container-padding 0 0 12, , Hide
+Run, komorebic.exe workspace-padding 0 1 100, , Hide
+Run, komorebic.exe container-padding 0 1 100, , Hide
 Run, komorebic.exe container-padding 0 1 30, , Hide
 Run, komorebic.exe workspace-padding 0 2 200, , Hide
-Run, komorebic.exe workspace-padding 0 3 0, , Hide
+Run, komorebic.exe workspace-padding 0 3 100, , Hide
 Run, komorebic.exe container-padding 0 3 0, , Hide
 
 ; Set the layouts of different workspaces
@@ -129,19 +129,19 @@ Run, komorebic.exe move right, , Hide
 return
 
 ^h::
-    Send, {AltDown}{Space}{AltUp}s{Left 2}
+    Run, komorebic.exe resize-axis horizontal increase, , Hide
 return
 
 ^j::
-    Send, {AltDown}{Space}{AltUp}s{Down 2}
+    Run, komorebic.exe resize-axis vertical increase, , Hide
 return
 
 ^k::
-    Send, {AltDown}{Space}{AltUp}s{Up 2}
+    Run, komorebic.exe resize-axis vertical decrease, , Hide
 return
 
 ^l::
-    Send, {AltDown}{Space}{AltUp}s{Right 2}
+    Run, komorebic.exe resize-axis horizontal decrease, , Hide
 return
 
 ; Stack the focused window in a given direction, Alt + Shift + direction keys
@@ -187,6 +187,10 @@ return
 ;; Switch to the default bsp tiling layout on the main workspace, Alt + Shift + T
 d::
 Run, komorebic.exe workspace-layout 0 0 bsp, , Hide
+return
+
+p::
+Run, komorebic.exe workspace-layout 0 3 matrix, , Hide
 return
 
 ; Toggle the Monocle layout for the focused window, Alt + Shift + F
