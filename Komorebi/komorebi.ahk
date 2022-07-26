@@ -268,8 +268,8 @@ return
 flyout() {
         Gui, 99:+AlwaysOnTop -Caption +ToolWindow -SysMenu +Owner
         Gui, 99:Font, s14 bold, Fira Code
-        Gui, 99:Add, Text, cE9E9F4, komorebi mode
-        Gui, 99:Color, 282a36
+        Gui, 99:Add, Text, cCBA6F7, komorebi mode
+        Gui, 99:Color, 660b4d
         Gui, 99:Show,NoActivate x125 y0, komorebiFlyout
         return
 }
