@@ -13,22 +13,22 @@ global speed_x := 0
 global speed_y := 0
 global t := 2 ; dividend for clamp_speed, default is 2
 
-global accn := 1 ; formerly 0.75
+global ACCN := 1.6 ; formerly 0.75
 
 show_Mouse(False)
 MouseMove, 0, 0, 0
 global mouseHidden := True
 
-SetTimer, updateMouse, 15
+SetTimer, updateMouse, 0
 Pause
 
 
-fric := 1.15 ; friction, where 1 is no friction
+fric := 1.35 ; friction, where 1 is no friction
 clamp_speed := 100
 
 
+a := ACCN
 LCtrl & RAlt::
-accn := 1
   if (mouseHidden) {
     if (A_TickCount - mouseHiddenTime) >= 3000
       MouseMove, A_ScreenWidth//2, A_ScreenHeight//2, 0
@@ -64,14 +64,14 @@ updateMouse:
     p_speed_x := speed_x
 
     diagonal := ((mouse_up || mouse_down) && (mouse_left || mouse_right))
-    ; speed_y += (mouse_up) ? -accn : 0
-    ; speed_y += (mouse_down) ? accn : 0
-    ; speed_x += (mouse_left) ? -accn : 0
-    ; speed_x += (mouse_right) ? accn : 0
-    speed_y += (mouse_down) ? (diagonal) ? +(accn/Sqrt(2)) : +accn : 0
-    speed_y += (mouse_up) ? (diagonal) ? -(accn/Sqrt(2)) : -accn  : 0
-    speed_x += (mouse_left) ? (diagonal) ? -(accn/Sqrt(2)) : -accn : 0
-    speed_x += (mouse_right) ? (diagonal) ? +(accn/Sqrt(2)) : +accn  : 0
+    ; speed_y += (mouse_up) ? -a : 0
+    ; speed_y += (mouse_down) ? a : 0
+    ; speed_x += (mouse_left) ? -a : 0
+    ; speed_x += (mouse_right) ? a : 0
+    speed_y += (mouse_down) ? (diagonal) ? +(a/Sqrt(2)) : +a : 0
+    speed_y += (mouse_up) ? (diagonal) ? -(a/Sqrt(2)) : -a  : 0
+    speed_x += (mouse_left) ? (diagonal) ? -(a/Sqrt(2)) : -a : 0
+    speed_x += (mouse_right) ? (diagonal) ? +(a/Sqrt(2)) : +a  : 0
 
     ;quick direction change and slow down
     speed_x := (!mouse_right and speed_x > 0) ? (speed_x / fric) : ((!mouse_left and speed_x < 0) ? (speed_x / fric) : speed_x)
@@ -154,10 +154,10 @@ r::mouse_left := True
 r Up::mouse_left := False
 t::mouse_right := True
 t Up::mouse_right := False
-a::t := 2.17, accn = 0.5, scrollSleep = 100
-a Up::t := 2, accn = 1, scrollSleep = 50
-Space::t := 1.92, accn = 1.5, scrollSleep = 25
-Space Up::t := 2, accn = 1, scrollSleep = 50
+a::t := 2.17, a = 0.5, scrollSleep = 100
+a Up::t := 2, a = ACCN, scrollSleep = 50
+Space::t := 1.92, a = 1.5, scrollSleep = 25
+Space Up::t := 2, a = ACCN, scrollSleep = 50
 
 m::
   Send, {AltDown}
