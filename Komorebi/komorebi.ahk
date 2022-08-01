@@ -56,6 +56,8 @@ Run, komorebic.exe float-rule exe PowerToys.ColorPickerUI.exe, , Hide
 Run, komorebic.exe float-rule title Calculator, , Hide
 Run, komorebic.exe float-rule exe 1Password.exe, , Hide
 Run, komorebic.exe float-rule exe javaw.exe, , Hide
+Run, komorebic.exe float-rule exe obs64.exe, , Hide
+Run, komorebic.exe float-rule exe vegas190.exe, , Hide
 
 ; Always manage forcibly these applications that don't automatically get picked up by komorebi
 Run, komorebic.exe manage-rule exe TIM.exe, , Hide
@@ -67,15 +69,23 @@ Run, komorebic.exe identify-tray-application exe Discord.exe, , Hide
 Run, komorebic.exe identify-border-overflow exe Discord.exe, , Hide
 
 #IfWinNotActive ahk_exe javaw.exe
-RShift::
-global mode := !mode
-if (mode)
-    flyout()
-else
-    Gui, 99:Destroy
-return
 
-#if (mode)
+#InputLevel 1
+Tab::F23
+RShift::F24
+#InputLevel 0
+
+F23::
+  SendInput, {Tab}
+return
+F24::
+  SendInput, {RShift}
+return
+; placeholder key combination
+F23 & q::Return
+F24 & q::Return
+
+#If !WinActive("ahk_exe javaw.exe") && (GetKeyState("Tab", "P") || GetKeyState("RShift", "P")) 
 ; Change the focused window, Alt + Vim direction keys
 h::
 Run, komorebic.exe focus left, , Hide
@@ -175,7 +185,7 @@ Run, komorebic.exe unstack, , Hide
 return
 
 ; Promote the focused window to the top of the tree, Alt + Shift + Enter
-+Enter::
+Enter::
 Run, komorebic.exe promote, , Hide
 return
 
