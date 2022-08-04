@@ -126,7 +126,7 @@ show_Mouse(bShow := True) { ; show/hide the mouse cursor
             , "Int", 32                 ; int        nHeight
             , "Ptr", &ANDmask           ; const VOID *pvANDPlane
             , "Ptr", &XORmask           ; const VOID *pvXORPlane
-           , "Cdecl Ptr")              ; return HCURSOR
+            , "Cdecl Ptr")              ; return HCURSOR
     }
 
     ; set all system cursors to blank, each needs a new copy
@@ -141,7 +141,7 @@ show_Mouse(bShow := True) { ; show/hide the mouse cursor
             , "Cdecl Ptr")              ; return HANDLE
 
         DllCall("SetSystemCursor"
-            , "Ptr",  rursorHandle      ; HCURSOR hcur
+            , "Ptr",  CursorHandle      ; HCURSOR hcur
             , "UInt", A_Loopfield       ; DWORD   id
             , "Cdecl Int")              ; return BOOL
     }
