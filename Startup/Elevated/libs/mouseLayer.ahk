@@ -3,6 +3,7 @@ ListLines Off
 CoordMode, Mouse, Screen
 SetBatchLines, -1
 SetMouseDelay, -1
+SetKeyDelay, -1
 #SingleInstance,Force
 #NoTrayIcon
 SetTitleMatchMode, 2
@@ -11,6 +12,8 @@ DetectHiddenWindows, On
 global scrollSleep := 50 ; sleep before each scroll
 global speed_x := 0
 global speed_y := 0
+
+; how quickly it accelerates i think
 global t := 2 ; dividend for clamp_speed, default is 2
 
 global ACCN := 1.6 ; formerly 0.75
@@ -123,7 +126,7 @@ show_Mouse(bShow := True) { ; show/hide the mouse cursor
             , "Int", 32                 ; int        nHeight
             , "Ptr", &ANDmask           ; const VOID *pvANDPlane
             , "Ptr", &XORmask           ; const VOID *pvXORPlane
-            , "Cdecl Ptr")              ; return HCURSOR
+           , "Cdecl Ptr")              ; return HCURSOR
     }
 
     ; set all system cursors to blank, each needs a new copy
@@ -138,7 +141,7 @@ show_Mouse(bShow := True) { ; show/hide the mouse cursor
             , "Cdecl Ptr")              ; return HANDLE
 
         DllCall("SetSystemCursor"
-            , "Ptr",  CursorHandle      ; HCURSOR hcur
+            , "Ptr",  rursorHandle      ; HCURSOR hcur
             , "UInt", A_Loopfield       ; DWORD   id
             , "Cdecl Int")              ; return BOOL
     }
@@ -146,7 +149,9 @@ show_Mouse(bShow := True) { ; show/hide the mouse cursor
 
 #If !(A_IsPaused)
 
++f::
 f::mouse_up := True
++f Up::
 f Up::mouse_up := False
 s::mouse_down := True
 s Up::mouse_down := False
@@ -157,7 +162,7 @@ t Up::mouse_right := False
 a::t := 2.17, a = 0.5, scrollSleep = 100
 a Up::t := 2, a = ACCN, scrollSleep = 50
 Space::t := 1.92, a = 1.5, scrollSleep = 25
-Space Up::t := 2, a = ACCN, scrollSleep = 50
+Space Up::t := 2, a = ACCN, scrollSleep = 100
 
 m::
   Send, {AltDown}
@@ -170,18 +175,22 @@ m Up::
 return
 
 n::
+  a := 0.5
   MouseClick , Left,,,,, D
   KeyWait, SC024
 return
 n Up::
   MouseClick , Left,,,,, U
+  a := ACCN
 return
 e::
+  a := 0.5
   MouseClick , Right,,,,, D
   keyWait, SC025
 return
 e Up::
   MouseClick , Right,,,,, U
+  a := ACCN
 return
 h::
   MouseClick , Middle,,,,, D
@@ -192,31 +201,23 @@ h Up::
 return
 
 +i::
-    while (GetKeyState("i", "P") && GetKeyState("Shift", "P")) {
-        Send, {WheelLeft}
-        sleep, % scrollSleep
-    }
+  SendInput, {WheelLeft 1}
+  sleep, %scrollSleep%
 return
 
 +o::
-    while (GetKeyState("o", "P") && GetKeyState("Shift", "P")) {
-        Send, {WheelRight}
-        sleep, % scrollSleep
-    }
+  SendInput, {WheelRight 1}
+  sleep, %scrollSleep%
 return
 
 i::
-    while (GetKeyState("i", "P")) {
-        Send, {WheelUp}
-        sleep, % scrollSleep
-    }
+  SendInput, {WheelUp 1}
+  sleep, %scrollSleep%
 return
 
 o::
-    while (GetKeyState("o", "P")) {
-        Send, {WheelDown}
-        sleep, % scrollSleep 
-    }
+  SendInput, {WheelDown 1}
+  sleep, %scrollSleep%
 return
 
 u:: ; click on system tray
