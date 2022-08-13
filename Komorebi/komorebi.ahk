@@ -6,6 +6,9 @@ SetKeyDelay, -1
 ; Disable hot reloading of changes to this file
 Run, komorebic.exe watch-configuration disable, , Hide
 
+; Disable active window borders
+Run, komorebic.exe active-window-border disable, , Hide
+
 ; Disable focus follows mouse
 Run, komorebic.exe focus-follows-mouse disable, , Hide
 
@@ -78,6 +81,10 @@ RShift::F24
 F23::
   SendInput, {Tab}
 return
++F23::
+  SendInput, {Shift Down}{Tab}{Shift Up}
+return
+
 F24::
   SendInput, {RShift}
 return
