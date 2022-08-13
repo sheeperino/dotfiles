@@ -12,4 +12,4 @@ if update_available:
     ctypes.windll.user32.MessageBoxW(0, msg, title, 32)
 
 # https://github.com/LGUG2Z/komorebi#running 
-subprocess.run('komorebic start', text=True)
+subprocess.run('komorebic start --await-configuration', text=True)

@@ -1,16 +1,15 @@
 #SingleInstance Force
 SetTitleMatchMode, 2
 SetKeyDelay, -1
+SetBatchLines, -1
 
 
 ; Disable hot reloading of changes to this file
 Run, komorebic.exe watch-configuration disable, , Hide
 
-; Disable active window borders
-Run, komorebic.exe active-window-border disable, , Hide
-
 ; Disable focus follows mouse
 Run, komorebic.exe focus-follows-mouse disable, , Hide
+Run, komorebic.exe toggle-mouse-follows-focus, , Hide
 
 ; Ensure there are 3 workspaces created on monitor 0
 Run, komorebic.exe ensure-workspaces 0 5, , Hide
@@ -70,6 +69,13 @@ Run, komorebic.exe identify-tray-application exe Discord.exe, , Hide
 
 ; Identify applications that have overflowing borders
 Run, komorebic.exe identify-border-overflow exe Discord.exe, , Hide
+
+; Disable active window borders
+Run, komorebic.exe active-window-border disable, , Hide
+
+; Finish configuration
+Run, komorebic.exe complete-configuration, , Hide
+
 
 #IfWinNotActive ahk_exe javaw.exe
 
