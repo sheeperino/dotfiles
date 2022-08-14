@@ -147,57 +147,74 @@ show_Mouse(bShow := True) { ; show/hide the mouse cursor
     }
 }
 
+AllowModifiers() {
+  SetCapsLockState, AlwaysOff
+  If GetKeyState("LShift", "P")
+    SendInput, {Blind}{LShift Down}
+  If GetKeyState("CapsLock", "P")
+    SendInput, {Blind}{RCtrl Down}
+}
+
+ReleaseModifiers() {
+  SetCapsLockState, Off
+  SendInput, {Blind}{LShift Up}
+  SendInput, {Blind}{RCtrl Up}
+}
+
 #If !(A_IsPaused)
 
-+f::
-f::mouse_up := True
-+f Up::
-f Up::mouse_up := False
-s::mouse_down := True
-s Up::mouse_down := False
-r::mouse_left := True
-r Up::mouse_left := False
-t::mouse_right := True
-t Up::mouse_right := False
-a::t := 2.17, a = 0.5, scrollSleep = 100
-a Up::t := 2, a = ACCN, scrollSleep = 50
-Space::t := 1.92, a = 1.5, scrollSleep = 25
-Space Up::t := 2, a = ACCN, scrollSleep = 100
+*f::mouse_up := True
+*f Up::mouse_up := False
+*s::mouse_down := True
+*s Up::mouse_down := False
+*r::mouse_left := True
+*r Up::mouse_left := False
+*t::mouse_right := True
+*t Up::mouse_right := False
+*a::t := 2.17, a = 0.5, scrollSleep = 100
+*a Up::t := 2, a = ACCN, scrollSleep = 50
+*Space::t := 1.92, a = 1.5, scrollSleep = 25
+*Space Up::t := 2, a = ACCN, scrollSleep = 100
 
 m::
   Send, {AltDown}
-  MouseClick , Middle,,,,, D
+  DllCall("mouse_event","UInt",0x0020)
   Send, {AltUp}
 return
 m Up::
-  MouseClick , Middle,,,,, U
+  DllCall("mouse_event","UInt",0x0040)
   Send, {AltUp}
 return
 
-n::
+*n::
+  AllowModifiers()
   a := 0.5
-  MouseClick , Left,,,,, D
-  KeyWait, SC024
+  DllCall("mouse_event","UInt",0x0002)
 return
-n Up::
-  MouseClick , Left,,,,, U
+*n Up::
+  ReleaseModifiers()
+  DllCall("mouse_event","UInt",0x0004)
   a := ACCN
 return
-e::
+
+*e::
+  AllowModifiers()
   a := 0.5
-  MouseClick , Right,,,,, D
-  keyWait, SC025
+  DllCall("mouse_event","UInt",0x0008)
 return
-e Up::
-  MouseClick , Right,,,,, U
+*e Up::
+  ReleaseModifiers()
+  DllCall("mouse_event","UInt",0x0010)
   a := ACCN
 return
-h::
-  MouseClick , Middle,,,,, D
-  keyWait, SC032
+
+*h::
+  AllowModifiers()
+  DllCall("mouse_event","UInt",0x0020)
 return
-h Up::
-  MouseClick , Middle,,,,, U
+*h Up::
+  ReleaseModifiers()
+  DllCall("mouse_event","UInt",0x0040)
 return
 
 +i::
