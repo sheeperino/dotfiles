@@ -188,24 +188,20 @@ return
 
 *n::
   AllowModifiers()
-  a := 0.5
   DllCall("mouse_event","UInt",0x0002)
 return
 *n Up::
   ReleaseModifiers()
   DllCall("mouse_event","UInt",0x0004)
-  a := ACCN
 return
 
 *e::
   AllowModifiers()
-  a := 0.5
   DllCall("mouse_event","UInt",0x0008)
 return
 *e Up::
   ReleaseModifiers()
   DllCall("mouse_event","UInt",0x0010)
-  a := ACCN
 return
 
 *h::
