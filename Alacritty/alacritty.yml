@@ -111,4 +111,4 @@ shell:
 key_bindings:
   - { key: V, mods: Control, action: Paste }
   - { key: N, mods: Control, action: SpawnNewInstance }
-  - { key: Back, mods: Control, chars: "\x1b\x7f" } # Delete word
+  - { key: Back, mods: Control, chars: "\x17" } # Delete word
