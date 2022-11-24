@@ -44,11 +44,11 @@ Capitalization(mode) {
 return
 
 ^>!#SC02E:: ; SC02E is c
-    CheckRun("C:\Users\Sophie\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk", "discord.exe", "Discord")
+    ;CheckRun("C:\Users\Sophie\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk", "discord.exe", "Discord")
 return
 
 #SC021:: ; SC021 is t
-    CheckRun("C:\Program Files\Alacritty\alacritty.exe", "alacritty.exe", "Alacritty")
+    CheckRun("C:\Users\Sophie\scoop\apps\wezterm\current\wezterm-gui.exe", "wezterm-gui.exe", "ahk_exe wezterm-gui.exe")
 return
 
 ^>!#SC02F:: ; SC02F is v
@@ -56,7 +56,7 @@ return
 return
 
 #SC024::
-    CheckRun("C:\ProgramData\chocolatey\bin\neovide.exe", "neovide.exe", "Neovide", "--multigrid")
+    CheckRun("C:\ProgramData\chocolatey\bin\neovide.exe", "neovide.exe", "Neovide")
 return
 
 
