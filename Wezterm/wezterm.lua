@@ -20,7 +20,6 @@ return {
   line_height = 1,
   default_cursor_style = "SteadyBlock",
   force_reverse_video_cursor = false,
-  -- font = wezterm.font("FiraCode Nerd Font"),
   font = wezterm.font("CaskaydiaCove Nerd Font Mono", { weight = "Regular" }),
   font_size = 13,
   animation_fps = 10,
@@ -28,11 +27,16 @@ return {
   enable_tab_bar = true,
   hide_tab_bar_if_only_one_tab = true,
   use_fancy_tab_bar = false,
-  tab_and_split_indices_are_zero_based = true,
-  quick_select_alphabet = "arstqwfpzxcvneioluymdhgjbk",
+  quick_select_alphabet = "arstqwfpxcdvneioluyhgkbjzm", -- optimized for colemak-dhk
+  disable_default_key_bindings = true,
 
   -- mappings
   keys = {
+    {
+      key = 'd',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.CopyTo("Clipboard"),
+    },
     {
       key = 'w',
       mods = 'CTRL|SHIFT',
@@ -44,9 +48,34 @@ return {
       action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" },
     },
     {
-      key = 'o',
-      mods = 'CTRL',
-      action = wezterm.action.PaneSelect,
+      key = 'h',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.SplitPane { direction = "Left" } ,
+    },
+    {
+      key = 'l',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.SplitPane { direction = "Right" } ,
+    },
+    {
+      key = 'j',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.SplitPane { direction = "Down" } ,
+    },
+    {
+      key = 'k',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.SplitPane { direction = "Up" } ,
+    },
+    {
+      key = 't',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.SpawnTab("CurrentPaneDomain"),
+    },
+    {
+      key = 'n',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.SpawnWindow,
     },
     {
       key = 'Backspace',
@@ -55,18 +84,23 @@ return {
     },
     {
       key = 'v',
-      mods = 'CTRL',
+      mods = 'CTRL|SHIFT',
       action = wezterm.action.Paste,
     },
     {
-      key = 't',
-      mods = 'CTRL',
-      action = wezterm.action.ActivateTabRelative(1),
+      key = 'Space',
+      mods = 'SHIFT',
+      action = wezterm.action.ShowTabNavigator,
     },
-    -- {
-    --   key = 'w',
-    --   mods = 'CTRL',
-    --   action = wezterm.action.ShowTabNavigator,
-    -- },
+    {
+      key = 'o',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.ScrollByPage(0.5) ,
+    },
+    {
+      key = 'i',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.ScrollByPage(-0.5) ,
+    },
   },
 }
