@@ -73,15 +73,15 @@ require('packer').startup(function()
   use {'ms-jpq/coq_nvim',
         branch = 'coq',
         event = {"BufRead", "BufNewFile", "BufWinEnter"},
-        setup = function()
-          vim.g.coq_settings = {
-            ['auto_start']= 'shut-up',
-            ['keymap.jump_to_mark']= '<C-e>'
-          }
-        end,
-        config = function()
-          require('coq')
-        end
+        setup = function() require("plugins.coq_nvim") end
+        --   vim.g.coq_settings = {
+        --     ['auto_start']= 'shut-up',
+        --     ['keymap.jump_to_mark']= '<C-e>'
+        --   }
+        -- end,
+        -- config = function()
+        --   require('coq')
+        -- end
   }
   use {'ms-jpq/coq.artifacts',
         branch = 'artifacts',
@@ -153,10 +153,12 @@ require('packer').startup(function()
 
   use {"elihunter173/dirbuf.nvim",
         cmd = "Dirbuf",
+        -- to remove hashes see :h dirbuf-faq
         config = function() require("dirbuf").setup({
           show_hidden = true,
           sort_order = "directories_first",
         })
+        require("dirbuf").enter("pedit")
         end
   }
 
