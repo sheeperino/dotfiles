@@ -158,7 +158,6 @@ require('packer').startup(function()
           show_hidden = true,
           sort_order = "directories_first",
         })
-        require("dirbuf").enter("pedit")
         end
   }
 
