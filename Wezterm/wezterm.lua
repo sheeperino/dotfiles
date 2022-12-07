@@ -68,6 +68,11 @@ return {
       action = wezterm.action.SplitPane { direction = "Up" } ,
     },
     {
+      key = 's',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.ActivatePaneDirection("Next") ,
+    },
+    {
       key = 't',
       mods = 'CTRL|SHIFT',
       action = wezterm.action.SpawnTab("CurrentPaneDomain"),
