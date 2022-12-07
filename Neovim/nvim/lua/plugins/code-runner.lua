@@ -7,6 +7,6 @@ require('code_runner').setup({
     typescript = 'deno run',
     rust = 'cd $dir; rustc $fileName; $dir/$fileNameWithoutext',
     cpp = 'cd $dir; g++ $fileName -o $fileNameWithoutExt.exe; $fileNameWithoutExt.exe',
-    autohotkey = 'cd $dir; AutoHotkey $fileName'
+    autohotkey = 'cd $dir; AutoHotkey.exe $fileName'
   }  
 })
