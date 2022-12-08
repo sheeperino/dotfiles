@@ -1,3 +1,4 @@
+ -- enabling this will disable some built-in features such as gx
 local disabled_built_ins = {
  "netrw",
  "netrwPlugin",
