@@ -23,7 +23,7 @@ set.wrap = false
 set.lazyredraw = false
 set.clipboard = "unnamedplus"
 set.autochdir = true
-set.scrolloff = 4
+set.scrolloff = 3
 
 set.undofile = true
 set.undodir= os.getenv("HOME") .. '/.nvim_undo'
