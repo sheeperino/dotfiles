@@ -46,10 +46,11 @@ require('packer').startup(function()
         config = function() require('plugins.toggleterm') end
   }
 
-  use {'windwp/nvim-autopairs',
-        event = 'InsertEnter',
-        config = function() require('nvim-autopairs').setup{} end
-  }
+  -- use {'windwp/nvim-autopairs',
+  --       event = 'InsertEnter',
+  --       config = function() require('nvim-autopairs').setup{} end
+  -- }
+  use 'm4xshen/autoclose.nvim'
 
   use {'numToStr/Comment.nvim',
         keys = {'gc', 'gb'},
@@ -75,7 +76,7 @@ require('packer').startup(function()
         event = {"BufRead", "BufNewFile", "BufWinEnter"},
         setup = function() require("plugins.coq_nvim") end
         -- config = function()
-        --   require('coq')
+          -- require('coq')
         -- end
   }
   use {'ms-jpq/coq.artifacts',
