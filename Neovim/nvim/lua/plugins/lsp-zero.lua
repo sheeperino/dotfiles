@@ -5,7 +5,9 @@ lsp.ensure_installed({
   "pylsp",
   "jsonls",
   "yamlls",
+  "jdtls",
 })
 
 lsp.preset("lsp-only")
+
 lsp.setup()
