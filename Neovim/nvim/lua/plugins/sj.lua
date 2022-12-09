@@ -5,6 +5,7 @@ sj.setup({
   prompt_prefix = "sj: ",
   separator = "",
   relative_labels = true,
+  pattern_type = "lua_plain",
   -- optimized for colemak-dhk
   labels = {
     'a', 'r', 's', 't', 'q', 'w', 'f', 'p', 'x', 'c', 'd', 'v',
