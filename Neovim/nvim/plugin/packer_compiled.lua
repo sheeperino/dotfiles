@@ -91,6 +91,11 @@ _G.packer_plugins = {
     path = "/home/sheepsophie/.local/share/nvim/site/pack/packer/opt/auto-session",
     url = "https://github.com/rmagatti/auto-session"
   },
+  ["autoclose.nvim"] = {
+    loaded = true,
+    path = "/home/sheepsophie/.local/share/nvim/site/pack/packer/start/autoclose.nvim",
+    url = "https://github.com/m4xshen/autoclose.nvim"
+  },
   ["barbar.nvim"] = {
     config = { "\27LJ\2\2.\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\19plugins.barbar\frequire\0" },
     loaded = false,
@@ -197,14 +202,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/sheepsophie/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["nvim-autopairs"] = {
-    config = { "\27LJ\2\2@\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/sheepsophie/.local/share/nvim/site/pack/packer/opt/nvim-autopairs",
-    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -333,12 +330,12 @@ pcall(vim.api.nvim_create_user_command, 'Switch', function(cmdargs)
           require('packer.load')({'switch.vim'}, { cmd = 'Switch' }, _G.packer_plugins)
           return vim.fn.getcompletion('Switch ', 'cmdline')
       end})
-pcall(vim.api.nvim_create_user_command, 'Telescope', function(cmdargs)
-          require('packer.load')({'telescope.nvim'}, { cmd = 'Telescope', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+pcall(vim.api.nvim_create_user_command, 'IncRename', function(cmdargs)
+          require('packer.load')({'inc-rename.nvim'}, { cmd = 'IncRename', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'telescope.nvim'}, { cmd = 'Telescope' }, _G.packer_plugins)
-          return vim.fn.getcompletion('Telescope ', 'cmdline')
+          require('packer.load')({'inc-rename.nvim'}, { cmd = 'IncRename' }, _G.packer_plugins)
+          return vim.fn.getcompletion('IncRename ', 'cmdline')
       end})
 pcall(vim.api.nvim_create_user_command, 'Glow', function(cmdargs)
           require('packer.load')({'glow.nvim'}, { cmd = 'Glow', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
@@ -347,12 +344,12 @@ pcall(vim.api.nvim_create_user_command, 'Glow', function(cmdargs)
           require('packer.load')({'glow.nvim'}, { cmd = 'Glow' }, _G.packer_plugins)
           return vim.fn.getcompletion('Glow ', 'cmdline')
       end})
-pcall(vim.api.nvim_create_user_command, 'IncRename', function(cmdargs)
-          require('packer.load')({'inc-rename.nvim'}, { cmd = 'IncRename', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+pcall(vim.api.nvim_create_user_command, 'Telescope', function(cmdargs)
+          require('packer.load')({'telescope.nvim'}, { cmd = 'Telescope', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'inc-rename.nvim'}, { cmd = 'IncRename' }, _G.packer_plugins)
-          return vim.fn.getcompletion('IncRename ', 'cmdline')
+          require('packer.load')({'telescope.nvim'}, { cmd = 'Telescope' }, _G.packer_plugins)
+          return vim.fn.getcompletion('Telescope ', 'cmdline')
       end})
 pcall(vim.api.nvim_create_user_command, 'RunCode', function(cmdargs)
           require('packer.load')({'code_runner.nvim'}, { cmd = 'RunCode', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
@@ -377,7 +374,7 @@ vim.cmd [[au BufNewFile * ++once lua require("packer.load")({'auto-session', 'dr
 vim.cmd [[au UIEnter * ++once lua require("packer.load")({'barbar.nvim', 'lualine.nvim', 'nvim-web-devicons'}, { event = "UIEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufRead * ++once lua require("packer.load")({'auto-session', 'dressing.nvim', 'sj.nvim', 'coq_nvim', 'todo-comments.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
 vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'auto-session', 'dressing.nvim', 'sj.nvim', 'coq_nvim', 'todo-comments.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs', 'coq.artifacts'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'coq.artifacts'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'lsp-zero.nvim', 'nvim-surround'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
