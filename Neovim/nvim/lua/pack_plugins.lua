@@ -46,11 +46,10 @@ require('packer').startup(function()
         config = function() require('plugins.toggleterm') end
   }
 
-  -- use {'windwp/nvim-autopairs',
-  --       event = 'InsertEnter',
-  --       config = function() require('nvim-autopairs').setup{} end
-  -- }
-  use 'm4xshen/autoclose.nvim'
+  use {'windwp/nvim-autopairs',
+        event = 'InsertEnter',
+        config = function() require('nvim-autopairs').setup{} end
+  }
 
   use {'numToStr/Comment.nvim',
         keys = {'gc', 'gb'},
