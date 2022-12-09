@@ -1,6 +1,6 @@
 local sj = require("sj")
 sj.setup({
-  auto_jump = false,
+  auto_jump = true,
   forward_search = true,
   prompt_prefix = "sj: ",
   separator = "",
