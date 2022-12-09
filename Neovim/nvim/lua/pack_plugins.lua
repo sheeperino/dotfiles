@@ -74,11 +74,6 @@ require('packer').startup(function()
         branch = 'coq',
         event = {"BufRead", "BufNewFile", "BufWinEnter"},
         setup = function() require("plugins.coq_nvim") end
-        --   vim.g.coq_settings = {
-        --     ['auto_start']= 'shut-up',
-        --     ['keymap.jump_to_mark']= '<C-e>'
-        --   }
-        -- end,
         -- config = function()
         --   require('coq')
         -- end

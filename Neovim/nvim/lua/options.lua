@@ -9,6 +9,9 @@ vim.g.neovide_refrsh_rate = 1111
 -- vim.g.neovide_transparency = 1
 set.guifont = 'FiraCode Nerd Font:h13'
 
+-- change python version
+vim.g.python3_host_prog="/usr/bin/python3.11"
+
 -- general settings
 set.mouse = ''
 set.hidden = true
