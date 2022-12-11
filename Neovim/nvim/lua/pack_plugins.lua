@@ -20,12 +20,6 @@ require('packer').startup(function()
         config = function() require("plugins.catppuccin") end
   }
 
-  -- doesn't work on wsl2 :(
-  -- use {'andweeb/presence.nvim',
-  --       event = 'BufReadPre',
-  --       config = function() require('plugins.presence') end
-  -- }
-
   use {'nvim-lualine/lualine.nvim',
         event = 'UIEnter',
         config = function() require('plugins.lualine') end
@@ -84,15 +78,6 @@ require('packer').startup(function()
         -- event = {"BufRead", "BufNewFile", "BufWinEnter"},
         after = "coq_nvim"
   }
-
-  -- use {"hrsh7th/nvim-cmp",
-  --       requires = {
-  --         {"L3MON4D3/LuaSnip"},
-  --         {'saadparwaiz1/cmp_luasnip'},
-  --         {'hrsh7th/cmp-nvim-lsp'}
-  --       },
-  --       config = function() require("plugins.nvim-cmp") end
-  -- }
 
   use {'nvim-telescope/telescope.nvim',
         cmd = 'Telescope',

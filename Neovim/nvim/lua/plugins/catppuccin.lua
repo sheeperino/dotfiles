@@ -7,5 +7,9 @@ require("catppuccin").setup({
         BufferInactiveTarget = { bold = false, italic = false, standout = true, fg = "#ccff88" },
       }
     end
+  },
+  integrations = {
+    notify = true,
+    mini = true,
   }
 })
