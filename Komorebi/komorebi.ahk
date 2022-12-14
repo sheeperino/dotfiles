@@ -123,7 +123,7 @@ return
 
 ; Toggle native maximize for the focused window, Alt + Shift + =
 t::
-Run, komorebic.exe toggle-maximize, , Hide
+Run, komorebic.exe toggle-monocle, , Hide
 return
 
 ; Force a retile if things get janky, Alt + Shift + R
@@ -217,8 +217,8 @@ Run, komorebic.exe workspace-layout 0 3 matrix, , Hide
 return
 
 ; Toggle the Monocle layout for the focused window, Alt + Shift + F
-+f::
-Run, komorebic.exe toggle-monocle, , Hide
+f::
+Run, komorebic.exe toggle-maximize, , Hide
 return
 ; Flip horizontally, Alt + X
 x::
