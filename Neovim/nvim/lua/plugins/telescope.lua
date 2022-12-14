@@ -8,6 +8,6 @@ require('telescope').setup{
         ["l"] = "select_default"
       }
     },
-    initial_mode = "normal"
+    initial_mode = "insert"
   }
 }
