@@ -1,4 +1,5 @@
 local sj = require("sj")
+
 sj.setup({
   auto_jump = true,
   forward_search = true,
@@ -27,4 +28,11 @@ vim.keymap.set({"n", "o", "x"}, "f", function()
 	sj.run({
     max_pattern_length = 1,
     search_scope = "current_line" })
+end)
+vim.keymap.set({"n", "o", "x"}, "s", function()
+	sj.run({
+    search_scope = "buffer",
+    forward_search = false,
+    update_search_register = true,
+  })
 end)
