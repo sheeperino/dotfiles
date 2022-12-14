@@ -1,6 +1,10 @@
 -- you might have to change some mappings
 -- depending on how your terminal handles Colemak-DH(k)
 
+-- "lazyload" system clipboard copy
+vim.keymap.set({"n", "o", "x", "v"}, "p", "<Cmd>set clipboard=unnamedplus<CR>p")
+vim.keymap.set({"n", "o", "x", "v"}, "P", "<Cmd>set clipboard=unnamedplus<CR>P")
+
 -- navigate through buffers
 vim.api.nvim_set_keymap('n', '<Tab>', ':BufferNext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<S-Tab>', ':BufferPrevious<CR>', { noremap = true, silent = true })

@@ -24,13 +24,15 @@ set.termguicolors = true
 set.cindent = true
 set.wrap = false
 set.lazyredraw = false
-set.clipboard = "unnamedplus"
+
 set.autochdir = true
 set.scrolloff = 3
 
 set.undofile = true
 set.undodir= os.getenv("HOME") .. '/.nvim_undo'
 
+-- auto-completion qol
+set.completeopt = { "menuone", "noselect" }
 
 -- tab size
 set.tabstop = 2

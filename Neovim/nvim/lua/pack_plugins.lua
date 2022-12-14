@@ -21,22 +21,26 @@ require('packer').startup(function()
   }
 
   use {'nvim-lualine/lualine.nvim',
-        event = 'UIEnter',
+        -- event = 'UIEnter',
+        event = { "BufRead", "BufWinEnter", "BufNewFile" },
         config = function() require('plugins.lualine') end
   }
 
   use {"andweeb/presence.nvim",
+        event = {"BufRead", "BufNewFile", "BufWinEnter"},
         config = function() require("plugins.presence") end
   }
 
-  use {'romgrk/barbar.nvim',
-        event = 'UIEnter',
-        config = function() require('plugins.barbar') end
+  use {'kyazdani42/nvim-web-devicons',
+        -- event = 'UIEnter',
+        after = "lualine.nvim",
+        config = function() require('nvim-web-devicons').setup{} end
   }
 
-  use {'kyazdani42/nvim-web-devicons',
-        event = 'UIEnter',
-        config = function() require('nvim-web-devicons').setup{} end
+  use {'romgrk/barbar.nvim',
+        -- event = 'UIEnter',
+        event = { "BufRead", "BufWinEnter", "BufNewFile" },
+        config = function() require('plugins.barbar') end
   }
 
   use {'akinsho/toggleterm.nvim',
@@ -86,15 +90,17 @@ require('packer').startup(function()
   use {'nvim-telescope/telescope.nvim',
         cmd = 'Telescope',
         requires = {'nvim-lua/plenary.nvim',
-                    'BurntSushi/ripgrep',
-                    after = 'telescope.nvim'},
+                    'BurntSushi/ripgrep'},
         config = function() require('plugins.telescope') end
   }
+  use {'BurntSushi/ripgrep',
+        after = "telescope.nvim"
+  }
 
-  use {'rmagatti/auto-session',
-        event = { "BufRead", "BufWinEnter", "BufNewFile" },
-        config = function() require('plugins.auto-session') end
-      }
+  -- use {'rmagatti/auto-session',
+  --       event = { "BufRead", "BufWinEnter", "BufNewFile" },
+  --       config = function() require('plugins.auto-session') end
+  --     }
 
   use {"smjonas/inc-rename.nvim",
         cmd = "IncRename",
@@ -107,7 +113,8 @@ require('packer').startup(function()
   }
 
   use {'VonHeikemen/lsp-zero.nvim',
-        event = "BufReadPre",
+        -- event = "BufReadPre",
+        event = { "BufRead", "BufWinEnter", "BufNewFile" },
         config = function() require("plugins.lsp-zero") end,
         requires = {
           {'neovim/nvim-lspconfig'},
@@ -147,6 +154,7 @@ require('packer').startup(function()
   }
 
   use {"ms-jpq/chadtree",
+        cmd = "CHADopen",
         config = function() require("plugins.chadtree") end
   }
 
