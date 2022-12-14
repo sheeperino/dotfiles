@@ -14,7 +14,7 @@ _G._packer.inside_compile = true
 
 local time
 local profile_info
-local should_profile = false
+local should_profile = true
 if should_profile then
   local hrtime = vim.loop.hrtime
   profile_info = {}
@@ -82,6 +82,14 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/sheepsophie/.local/share/nvim/site/pack/packer/opt/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
+  },
+  ["auto-session"] = {
+    config = { "\27LJ\2\0024\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\25plugins.auto-session\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/sheepsophie/.local/share/nvim/site/pack/packer/opt/auto-session",
+    url = "https://github.com/rmagatti/auto-session"
   },
   ["barbar.nvim"] = {
     config = { "\27LJ\2\2.\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\19plugins.barbar\frequire\0" },
@@ -389,17 +397,17 @@ time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
-vim.cmd [[noremap <silent> gc <cmd>lua require("packer.load")({'Comment.nvim'}, { keys = "gc", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> gb <cmd>lua require("packer.load")({'Comment.nvim'}, { keys = "gb", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> gc <cmd>lua require("packer.load")({'Comment.nvim'}, { keys = "gc", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufNewFile * ++once lua require("packer.load")({'barbar.nvim', 'dressing.nvim', 'lualine.nvim', 'lsp-zero.nvim', 'coq_nvim', 'sj.nvim', 'todo-comments.nvim', 'presence.nvim'}, { event = "BufNewFile *" }, _G.packer_plugins)]]
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'barbar.nvim', 'dressing.nvim', 'lualine.nvim', 'lsp-zero.nvim', 'coq_nvim', 'sj.nvim', 'todo-comments.nvim', 'presence.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
-vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'barbar.nvim', 'dressing.nvim', 'lualine.nvim', 'lsp-zero.nvim', 'coq_nvim', 'sj.nvim', 'todo-comments.nvim', 'presence.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufNewFile * ++once lua require("packer.load")({'auto-session', 'barbar.nvim', 'dressing.nvim', 'lualine.nvim', 'lsp-zero.nvim', 'coq_nvim', 'sj.nvim', 'todo-comments.nvim', 'presence.nvim'}, { event = "BufNewFile *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'auto-session', 'barbar.nvim', 'dressing.nvim', 'lualine.nvim', 'lsp-zero.nvim', 'coq_nvim', 'sj.nvim', 'todo-comments.nvim', 'presence.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'auto-session', 'barbar.nvim', 'dressing.nvim', 'lualine.nvim', 'lsp-zero.nvim', 'coq_nvim', 'sj.nvim', 'todo-comments.nvim', 'presence.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'coq.artifacts', 'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'nvim-surround'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)

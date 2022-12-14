@@ -97,10 +97,10 @@ require('packer').startup(function()
         after = "telescope.nvim"
   }
 
-  -- use {'rmagatti/auto-session',
-  --       event = { "BufRead", "BufWinEnter", "BufNewFile" },
-  --       config = function() require('plugins.auto-session') end
-  --     }
+  use {'rmagatti/auto-session',
+        event = { "BufRead", "BufWinEnter", "BufNewFile" },
+        config = function() require('plugins.auto-session') end
+      }
 
   use {"smjonas/inc-rename.nvim",
         cmd = "IncRename",
