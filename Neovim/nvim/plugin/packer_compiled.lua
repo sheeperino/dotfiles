@@ -105,6 +105,12 @@ _G.packer_plugins = {
     path = "/home/sheepsophie/.local/share/nvim/site/pack/packer/start/catppuccin",
     url = "https://github.com/catppuccin/nvim"
   },
+  chadtree = {
+    config = { "\27LJ\2\0020\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\21plugins.chadtree\frequire\0" },
+    loaded = true,
+    path = "/home/sheepsophie/.local/share/nvim/site/pack/packer/start/chadtree",
+    url = "https://github.com/ms-jpq/chadtree"
+  },
   ["code_runner.nvim"] = {
     commands = { "RunCode", "RunClose" },
     config = { "\27LJ\2\0023\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\24plugins.code-runner\frequire\0" },
@@ -134,12 +140,12 @@ _G.packer_plugins = {
   },
   ["dirbuf.nvim"] = {
     commands = { "Dirbuf" },
-    config = { "\27LJ\2\2e\0\0\2\0\4\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0B\0\2\1K\0\1\0\1\0\2\15sort_order\22directories_first\16show_hidden\2\nsetup\vdirbuf\frequire\0" },
+    config = { "\27LJ\2\2o\0\0\2\0\4\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0B\0\2\1K\0\1\0\1\0\3\rdevicons\2\15sort_order\22directories_first\16show_hidden\2\nsetup\vdirbuf\frequire\0" },
     loaded = false,
     needs_bufread = true,
     only_cond = false,
     path = "/home/sheepsophie/.local/share/nvim/site/pack/packer/opt/dirbuf.nvim",
-    url = "https://github.com/elihunter173/dirbuf.nvim"
+    url = "https://github.com/katawful/dirbuf.nvim"
   },
   ["dressing.nvim"] = {
     config = { "\27LJ\2\0026\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rdressing\frequire\0" },
@@ -237,6 +243,12 @@ _G.packer_plugins = {
     path = "/home/sheepsophie/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["presence.nvim"] = {
+    config = { "\27LJ\2\0020\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\21plugins.presence\frequire\0" },
+    loaded = true,
+    path = "/home/sheepsophie/.local/share/nvim/site/pack/packer/start/presence.nvim",
+    url = "https://github.com/andweeb/presence.nvim"
+  },
   ripgrep = {
     loaded = true,
     path = "/home/sheepsophie/.local/share/nvim/site/pack/packer/start/ripgrep",
@@ -295,6 +307,14 @@ time([[Setup for coq_nvim]], false)
 time([[Config for catppuccin]], true)
 try_loadstring("\27LJ\2\0022\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\23plugins.catppuccin\frequire\0", "config", "catppuccin")
 time([[Config for catppuccin]], false)
+-- Config for: chadtree
+time([[Config for chadtree]], true)
+try_loadstring("\27LJ\2\0020\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\21plugins.chadtree\frequire\0", "config", "chadtree")
+time([[Config for chadtree]], false)
+-- Config for: presence.nvim
+time([[Config for presence.nvim]], true)
+try_loadstring("\27LJ\2\0020\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\21plugins.presence\frequire\0", "config", "presence.nvim")
+time([[Config for presence.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
@@ -365,19 +385,19 @@ time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
-vim.cmd [[noremap <silent> gb <cmd>lua require("packer.load")({'Comment.nvim'}, { keys = "gb", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> gc <cmd>lua require("packer.load")({'Comment.nvim'}, { keys = "gc", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> gb <cmd>lua require("packer.load")({'Comment.nvim'}, { keys = "gb", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufNewFile * ++once lua require("packer.load")({'auto-session', 'dressing.nvim', 'sj.nvim', 'coq_nvim', 'todo-comments.nvim'}, { event = "BufNewFile *" }, _G.packer_plugins)]]
+vim.cmd [[au BufNewFile * ++once lua require("packer.load")({'auto-session', 'dressing.nvim', 'coq_nvim', 'sj.nvim', 'todo-comments.nvim'}, { event = "BufNewFile *" }, _G.packer_plugins)]]
 vim.cmd [[au UIEnter * ++once lua require("packer.load")({'barbar.nvim', 'lualine.nvim', 'nvim-web-devicons'}, { event = "UIEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'auto-session', 'dressing.nvim', 'sj.nvim', 'coq_nvim', 'todo-comments.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
-vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'auto-session', 'dressing.nvim', 'sj.nvim', 'coq_nvim', 'todo-comments.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs', 'coq.artifacts'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'auto-session', 'dressing.nvim', 'coq_nvim', 'sj.nvim', 'todo-comments.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'auto-session', 'dressing.nvim', 'coq_nvim', 'sj.nvim', 'todo-comments.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'coq.artifacts', 'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'lsp-zero.nvim', 'nvim-surround'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")

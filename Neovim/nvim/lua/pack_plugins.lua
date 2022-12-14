@@ -25,6 +25,10 @@ require('packer').startup(function()
         config = function() require('plugins.lualine') end
   }
 
+  use {"andweeb/presence.nvim",
+        config = function() require("plugins.presence") end
+  }
+
   use {'romgrk/barbar.nvim',
         event = 'UIEnter',
         config = function() require('plugins.barbar') end
@@ -131,14 +135,19 @@ require('packer').startup(function()
         config = function() require("plugins.sj") end
   }
 
-  use {"elihunter173/dirbuf.nvim",
+  use {"katawful/dirbuf.nvim",
         cmd = "Dirbuf",
         -- to remove hashes see :h dirbuf-faq
         config = function() require("dirbuf").setup({
           show_hidden = true,
           sort_order = "directories_first",
+          devicons = true,
         })
         end
+  }
+
+  use {"ms-jpq/chadtree",
+        config = function() require("plugins.chadtree") end
   }
 
   if packer_bootstrap then
