@@ -1,0 +1,57 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export EDITOR:nvim
+SETUVAR --export NNN_PLUG:f\x3afzopen\x3bi\x3aimgview\x3bj\x3aautojump
+SETUVAR --export --path PATH:/home/sheepsophie/\x2ecargo/bin\x1e/home/sheepsophie/\x2elocal/bin\x1e/usr/local/sbin\x1e/home/sheepsophie/\x2elocal/bin\x1e/usr/local/bin\x1e/home/sheepsophie/\x2elocal/bin\x1e/usr/sbin\x1e/home/sheepsophie/\x2elocal/bin\x1e/usr/bin\x1e/home/sheepsophie/\x2elocal/bin\x1e/sbin\x1e/home/sheepsophie/\x2elocal/bin\x1e/bin\x1e/home/sheepsophie/\x2elocal/bin\x1e/usr/games\x1e/home/sheepsophie/\x2elocal/bin\x1e/usr/local/games\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Program\x20Files/Alacritty/\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Program\x20Files/Eclipse\x20Adoptium/jdk\x2d18\x2e0\x2e2\x2e9\x2dhotspot/bin\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Program\x20Files/Zulu/zulu\x2d17/bin/\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Program\x20Files/Java/jdk\x2d17/bin\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Program\x20Files/Common\x20Files/Oracle/Java/javapath\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Program\x20Files/Zulu/zulu\x2d16/bin/\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Program\x20Files\x20\x28x86\x29/Common\x20Files/Oracle/Java/javapath\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/WINDOWS/system32\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/WINDOWS\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/WINDOWS/System32/Wbem\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/WINDOWS/System32/WindowsPowerShell/v1\x2e0/\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/WINDOWS/System32/OpenSSH/\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Program\x20Files/Git/cmd\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Program\x20Files/AutoHotkey\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/ProgramData/chocolatey/bin\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Program\x20Files/dotnet/\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Program\x20Files\x20\x28x86\x29/dotnet/\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/ProgramData/chocolatey/lib/gsudo/bin/\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/tools/winfetch\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Program\x20Files/CMake/bin\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Program\x20Files/nodejs/\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Users/Sophie/Desktop/NSudo_Launcher_Installer_AIO\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Program\x20Files/Neovim/bin\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Program\x20Files/LLVM/bin\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Program\x20Files/Git\x20LFS\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Program\x20Files/PowerShell/7/\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Program\x20Files/WezTerm\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Users/Sophie/scoop/apps/nodejs/current/bin\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Users/Sophie/scoop/apps/nodejs/current\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Users/Sophie/AppData/Roaming/local/bin\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Users/Sophie/scoop/shims\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Users/Sophie/\x2ecargo/bin\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Users/Sophie/AppData/Local/Programs/Python/Python310/Scripts/\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Users/Sophie/AppData/Local/Programs/Python/Python310/\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Users/Sophie/AppData/Local/Programs/Python/Python39/Scripts/\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Users/Sophie/AppData/Local/Programs/Python/Python39/\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Users/Sophie/AppData/Local/Microsoft/WindowsApps\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Users/Sophie/spicetify\x2dcli\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Users/Sophie/AppData/Local/Programs/oh\x2dmy\x2dposh/bin\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Users/Sophie/AppData/Local/Programs/oh\x2dmy\x2dposh/themes\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Users/Sophie/AppData/Local/Programs/Hyper/resources/bin\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Program\x20Files/Neovim/bin\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Program\x20Files/CMake/bin\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/Users/Sophie/AppData/Roaming/npm\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/tools/neovim/nvim\x2dwin64/bin\x1e/home/sheepsophie/\x2elocal/bin\x1e/mnt/c/ctags58/ctags\x2eexe\x1e/home/sheepsophie/\x2elocal/bin\x1e/snap/bin\x1e/home/sheepsophie/\x2elocal/bin
+SETUVAR Z_DATA_DIR:/home/sheepsophie/\x2elocal/share/z
+SETUVAR __fish_initialized:3400
+SETUVAR _fisher_acomagu_2F_fish_2D_async_2D_prompt_files:\x7e/\x2econfig/fish/conf\x2ed/__async_prompt\x2efish
+SETUVAR _fisher_catppuccin_2F_fish_files:\x7e/\x2econfig/fish/themes/Catppuccin\x20Frappe\x2etheme\x1e\x7e/\x2econfig/fish/themes/Catppuccin\x20Latte\x2etheme\x1e\x7e/\x2econfig/fish/themes/Catppuccin\x20Macchiato\x2etheme\x1e\x7e/\x2econfig/fish/themes/Catppuccin\x20Mocha\x2etheme
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ecatppuccin/fish\x1eacomagu/fish\x2dasync\x2dprompt
+SETUVAR _fisher_upgraded_to_4_4:\x1d
+SETUVAR fish_color_autosuggestion:6c7086
+SETUVAR fish_color_cancel:f38ba8
+SETUVAR fish_color_command:89b4fa
+SETUVAR fish_color_comment:\x1d
+SETUVAR fish_color_cwd:f9e2af
+SETUVAR fish_color_cwd_root:red
+SETUVAR fish_color_end:fab387
+SETUVAR fish_color_error:f38ba8
+SETUVAR fish_color_escape:f2cdcd
+SETUVAR fish_color_gray:6c7086
+SETUVAR fish_color_history_current:\x2d\x2dbold
+SETUVAR fish_color_host:89b4fa
+SETUVAR fish_color_host_remote:\x1d
+SETUVAR fish_color_keyword:f38ba8
+SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
+SETUVAR fish_color_normal:cdd6f4
+SETUVAR fish_color_operator:f5c2e7
+SETUVAR fish_color_option:\x1d
+SETUVAR fish_color_param:f2cdcd
+SETUVAR fish_color_quote:a6e3a1
+SETUVAR fish_color_redirection:f5c2e7
+SETUVAR fish_color_search_match:\x2d\x2dbackground\x3d313244
+SETUVAR fish_color_selection:\x2d\x2dbackground\x3d313244
+SETUVAR fish_color_status:red
+SETUVAR fish_color_user:94e2d5
+SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_greeting:owo
+SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_most_recent_dir:/home/sheepsophie/\x2econfig/fish/conf\x2ed
+SETUVAR fish_pager_color_background:\x1d
+SETUVAR fish_pager_color_completion:cdd6f4
+SETUVAR fish_pager_color_description:6c7086
+SETUVAR fish_pager_color_prefix:f5c2e7
+SETUVAR fish_pager_color_progress:6c7086
+SETUVAR fish_pager_color_secondary_background:\x1d
+SETUVAR fish_pager_color_secondary_completion:\x1d
+SETUVAR fish_pager_color_secondary_description:\x1d
+SETUVAR fish_pager_color_secondary_prefix:\x1d
+SETUVAR fish_pager_color_selected_background:\x1d
+SETUVAR fish_pager_color_selected_completion:\x1d
+SETUVAR fish_pager_color_selected_description:\x1d
+SETUVAR fish_pager_color_selected_prefix:\x1d
+SETUVAR --export fish_prompt_pwd_dir_length:0
+SETUVAR fish_user_paths:/home/sheepsophie/\x2elocal/bin
+SETUVAR --export hydro_symbol_prompt:
