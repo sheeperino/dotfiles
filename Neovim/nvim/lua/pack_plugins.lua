@@ -113,8 +113,8 @@ require('packer').startup(function()
   }
 
   use {'VonHeikemen/lsp-zero.nvim',
-        -- event = "BufReadPre",
-        event = { "BufRead", "BufWinEnter", "BufNewFile" },
+        event = "BufReadPre",
+        -- event = { "BufRead", "BufWinEnter", "BufNewFile" },
         config = function() require("plugins.lsp-zero") end,
         requires = {
           {'neovim/nvim-lspconfig'},

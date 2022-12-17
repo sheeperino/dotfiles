@@ -14,7 +14,7 @@ _G._packer.inside_compile = true
 
 local time
 local profile_info
-local should_profile = true
+local should_profile = false
 if should_profile then
   local hrtime = vim.loop.hrtime
   profile_info = {}
@@ -405,11 +405,11 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufNewFile * ++once lua require("packer.load")({'auto-session', 'barbar.nvim', 'dressing.nvim', 'lualine.nvim', 'lsp-zero.nvim', 'coq_nvim', 'sj.nvim', 'todo-comments.nvim', 'presence.nvim'}, { event = "BufNewFile *" }, _G.packer_plugins)]]
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'auto-session', 'barbar.nvim', 'dressing.nvim', 'lualine.nvim', 'lsp-zero.nvim', 'coq_nvim', 'sj.nvim', 'todo-comments.nvim', 'presence.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
-vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'auto-session', 'barbar.nvim', 'dressing.nvim', 'lualine.nvim', 'lsp-zero.nvim', 'coq_nvim', 'sj.nvim', 'todo-comments.nvim', 'presence.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufNewFile * ++once lua require("packer.load")({'auto-session', 'barbar.nvim', 'dressing.nvim', 'lualine.nvim', 'coq_nvim', 'sj.nvim', 'todo-comments.nvim', 'presence.nvim'}, { event = "BufNewFile *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'auto-session', 'barbar.nvim', 'dressing.nvim', 'lualine.nvim', 'coq_nvim', 'sj.nvim', 'todo-comments.nvim', 'presence.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'auto-session', 'barbar.nvim', 'dressing.nvim', 'lualine.nvim', 'coq_nvim', 'sj.nvim', 'todo-comments.nvim', 'presence.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'coq.artifacts', 'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'nvim-surround'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
+vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'lsp-zero.nvim', 'nvim-surround'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 
