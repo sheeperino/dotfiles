@@ -153,11 +153,6 @@ require('packer').startup(function()
         end
   }
 
-  use {"ms-jpq/chadtree",
-        cmd = "CHADopen",
-        config = function() require("plugins.chadtree") end
-  }
-
   if packer_bootstrap then
     require('packer').sync()
   end
