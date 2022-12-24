@@ -1,14 +1,23 @@
-require('bufferline').setup({
-  animation = false,
-  auto_hide = true,
+local M = {
+  "romgrk/barbar.nvim",
+  event = "VeryLazy",
+}
 
-  closable = false,
-  clickable = false,
+function M.config()
+  require('bufferline').setup({
+    animation = false,
+    auto_hide = true,
 
-  icons = false,
+    closable = false,
+    clickable = false,
 
-  icon_separator_active = '',
-  icon_separator_inactive = '',
+    icons = false,
 
-  letters = "arstqwfpxcdvneioluyhgkbjzm" -- optimized for colemak dhk
-})
+    icon_separator_active = '',
+    icon_separator_inactive = '',
+
+    letters = "arstqwfpxcdvneioluyhgkbjzm" -- optimized for colemak dhk
+  })
+end
+
+return M
