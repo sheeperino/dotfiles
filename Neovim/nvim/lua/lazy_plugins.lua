@@ -20,11 +20,11 @@ require("lazy").setup({
    -- status bar
    {"nvim-lualine/lualine.nvim",
      event = "UIEnter",
-     config = function() require("plugins.lualine") end
+     config = function() require("plugins.lualine") end,
    },
    -- icons
    {"kyazdani42/nvim-web-devicons",
-     event = "UIEnter",
+     lazy = true,
      config = function() require("nvim-web-devicons").setup() end
    },
    -- buffer-tab bar
