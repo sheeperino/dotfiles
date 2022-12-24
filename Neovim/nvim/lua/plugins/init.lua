@@ -36,4 +36,9 @@ return {
     event = "VeryLazy",
     config = true
   },
+  -- mapping helper
+  {"folke/which-key.nvim",
+    event = "VeryLazy",
+    config = true
+  },
 }
