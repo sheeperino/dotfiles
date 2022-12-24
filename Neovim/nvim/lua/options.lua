@@ -24,6 +24,7 @@ set.termguicolors = true
 set.cindent = true
 set.wrap = false
 set.lazyredraw = false
+set.showmode = false
 
 set.autochdir = true
 set.scrolloff = 3
