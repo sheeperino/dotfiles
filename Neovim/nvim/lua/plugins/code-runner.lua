@@ -13,7 +13,7 @@ function M.config()
       typescript = 'deno run',
       rust = 'cd $dir; rustc $fileName; $dir/$fileNameWithoutext',
       cpp = 'cd $dir; g++ $fileName -o $fileNameWithoutExt.exe; $fileNameWithoutExt.exe',
-      autohotkey = 'cd $dir; AutoHotkey.exe $fileName'
+      autohotkey = 'cd $dir; /mnt/c/Users/Sophie/AppData/Local/Programs/AutoHotkey/v2/AutoHotkey64.exe $fileName'
     }  
   })
 end
