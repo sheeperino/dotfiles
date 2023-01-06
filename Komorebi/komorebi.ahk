@@ -11,7 +11,7 @@ Run, komorebic.exe watch-configuration disable, , Hide
 Run, komorebic.exe focus-follows-mouse disable, , Hide
 Run, komorebic.exe toggle-mouse-follows-focus, , Hide
 
-; Ensure there are 3 workspaces created on monitor 0
+; Ensure there are 5 workspaces created on monitor 0
 Run, komorebic.exe ensure-workspaces 0 5, , Hide
 
 ; Give the workspaces some optional names
@@ -22,8 +22,8 @@ Run, komorebic.exe workspace-name 0 3 matrix, , Hide
 Run, komorebic.exe workspace-name 0 4 floaty, , Hide
 
 ; Set the padding of the different workspaces
-Run, komorebic.exe workspace-padding 0 0 0, , Hide
-Run, komorebic.exe container-padding 0 0 12, , Hide
+Run, komorebic.exe workspace-padding 0 0 6, , Hide
+Run, komorebic.exe container-padding 0 0 3, , Hide
 Run, komorebic.exe workspace-padding 0 1 100, , Hide
 Run, komorebic.exe container-padding 0 1 100, , Hide
 Run, komorebic.exe container-padding 0 1 30, , Hide
@@ -69,6 +69,7 @@ Run, komorebic.exe identify-tray-application exe Discord.exe, , Hide
 
 ; Identify applications that have overflowing borders
 Run, komorebic.exe identify-border-overflow exe Discord.exe, , Hide
+Run, komorebic.exe identify-border-overflow exe Spotify.exe, , Hide
 
 ; Disable active window borders
 Run, komorebic.exe active-window-border disable, , Hide
@@ -242,28 +243,33 @@ return
 
 
 ; Switch to workspace
+^>!h::
 1::
-Send !
+;Send !
 Run, komorebic.exe focus-workspace 0, , Hide
 return
 
+^>!n::
 2::
-Send !
+;Send !
 Run, komorebic.exe focus-workspace 1, , Hide
 return
 
+^>!t::
 3::
-Send !
+;Send !
 Run, komorebic.exe focus-workspace 2, , Hide
 return
 
+^>!i::
 4::
-Send !
+;Send !
 Run, komorebic.exe focus-workspace 3, , Hide
 return
 
+^>!r::
 5::
-Send !
+;Send !
 Run, komorebic.exe focus-workspace 4, , Hide
 return
 
