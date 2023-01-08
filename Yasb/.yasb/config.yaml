@@ -364,7 +364,7 @@ widgets:
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
     options:
-      label: "{win[title]}"
+      label: "{win[hwnd]}"
       label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
       label_no_window: ""
       max_length: 48
@@ -392,7 +392,7 @@ widgets:
     options:
       # for consistent size i use the right allign format ":>"
       # n has to be max_len + 1 (technically it will change size if cpu reaches 100%, but that's unlikely)
-      label: "\uf200 {info[percent][total]:>4}%"
+      label: "\uf2db {info[percent][total]:>4}%"
       update_interval: 2000
       histogram_icons:
         - '\u2581' # 0%
@@ -452,7 +452,7 @@ widgets:
   tray:
     type: "yasb.custom.CustomWidget"
     options:
-      label: "\u25bc" # ▼
+      label: "\uf078" # ▼
       label_alt: ":3"
       class_name: "tray-widget"
       exec_options:
