@@ -41,4 +41,9 @@ return {
     event = "VeryLazy",
     config = true
   },
+  -- fix built-in clipboard being slow
+  {"EtiamNullam/deferred-clipboard.nvim",
+    event = "VeryLazy",
+    config = true
+  },
 }
