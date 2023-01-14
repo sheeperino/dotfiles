@@ -24,7 +24,7 @@
     "disabledButtonsStayCollapsed": "false",
     "autoCollapse": "false",
     "keyBindsEnabled": "true",
-    "serverListButtonActive": "false",
+    "serverListButtonActive": "true",
     "channelListButtonActive": "true",
     "windowBarButtonActive": "false",
     "userAreaButtonActive": "true",
@@ -38,6 +38,6 @@
     "autoCollapseConditionals": ",,,,,,,",
     "buttonsOrder": "1,2,4,6,7,3,5,8",
     "dynamicUncollapseEnabled": "true,true,true,true,true,true,true,true",
-    "keyStringList": "Ctrl+Shift+S,Ctrl+D,,Alt+W,Ctrl+Shift+M,,Alt+P,Alt+I",
+    "keyStringList": "Ctrl+Shift+S,Ctrl+D,Ctrl+Shift+H,Alt+W,Ctrl+Shift+M,,Alt+P,",
     "profilePanelMaxWidth": "340"
 }
