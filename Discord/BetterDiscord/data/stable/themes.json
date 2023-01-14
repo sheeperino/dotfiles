@@ -8,5 +8,7 @@
     "Metro for Discord": false,
     "Dracula Theme": false,
     "Dracula Theme tt": false,
-    "Catppuccin": true
+    "Catppuccin": false,
+    "Catppuccin Mocha": true,
+    "Catppuccin Macchiato": true
 }
