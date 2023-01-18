@@ -85,4 +85,4 @@ vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, bufopts)
 -- vim.keymap.set("n", "s", sj.run)
 -- vim.keymap.set("v", "s", sj.run)
 
-vim.api.nvim_set_keymap("n", "<S-e>", ":Dirbuf %<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<S-e>", ":Oil --float<CR>", { silent = true })

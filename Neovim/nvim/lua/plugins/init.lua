@@ -46,4 +46,8 @@ return {
     event = "VeryLazy",
     config = true
   },
+  {"stevearc/oil.nvim",
+    event = "VeryLazy",
+    config = true
+  },
 }
