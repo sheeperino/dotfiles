@@ -25,6 +25,7 @@ set.cindent = true
 set.wrap = false
 set.lazyredraw = false
 set.showmode = false
+set.smartcase = true
 
 set.autochdir = true
 set.scrolloff = 3
