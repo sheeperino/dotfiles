@@ -35,11 +35,12 @@ function M.config()
       max_pattern_length = 1,
       search_scope = "current_line" })
   end)
-  vim.keymap.set({"n", "o", "x"}, "s", function()
+  vim.keymap.set({"n", "o", "x"}, "g/", function()
     sj.run({
       search_scope = "buffer",
       forward_search = false,
       update_search_register = true,
+      auto_jump = false,
     })
   end)
 end
