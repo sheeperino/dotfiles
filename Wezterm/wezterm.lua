@@ -23,7 +23,13 @@ return {
   font = wezterm.font("CaskaydiaCove Nerd Font Mono", { weight = "Regular" }),
   font_size = 13,
   animation_fps = 10,
-  window_decorations = "RESIZE",
+  -- window_decorations = "RESIZE", -- temporarily disabled
+  window_padding = {
+    bottom = 0,
+    top = 0,
+    right = 0,
+    left = 0,
+  },
   enable_tab_bar = true,
   hide_tab_bar_if_only_one_tab = true,
   use_fancy_tab_bar = false,
@@ -90,7 +96,7 @@ return {
     {
       key = 'v',
       mods = 'CTRL|SHIFT',
-      action = wezterm.action.Paste,
+      action = wezterm.action.PasteFrom("Clipboard"),
     },
     {
       key = 'Space',
